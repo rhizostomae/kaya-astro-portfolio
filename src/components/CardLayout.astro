@@ -1,0 +1,33 @@
+---
+import Card from './Card.astro';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Card Layout</title>
+  <style>
+    .card-body {
+      height: 100px; /* Set a fixed height for the card body */
+      overflow: hidden; /* Hide overflow content */
+    }
+  </style>
+</head>
+<body class="bg-gray-100 flex justify-center items-center h-screen">
+  <div class="w-10/12 xl:w-3/4">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <Card title="Card 1" body="Omnes Regular." href="https://example.com" img="https://via.placeholder.com/300" />
+      <Card title="Card 2" body="This is the content of card 2. It has more text to demonstrate the consistent height of the cards." href="https://example.com" img="https://via.placeholder.com/300" />
+      <Card title="Card 3" body="This is the content of card 3." href="https://example.com" img="https://via.placeholder.com/300" />
+      <Card title="Card 4" body="This is the content of card 4." href="https://example.com" img="https://via.placeholder.com/300" />
+      <Card title="Card 5" body="This is the content of card 5." href="https://example.com" img="https://via.placeholder.com/300" />
+      <Card title="Card 6" body="This is the content of card 6." href="https://example.com" img="https://via.placeholder.com/300" />
+      <Card title="Card 7" body="This is the content of card 7." href="https://example.com" img="https://via.placeholder.com/300" />
+      <Card title="Card 8" body="This is the content of card 8." href="https://example.com" img="https://via.placeholder.com/300" />
+      <Card title="Card 9" body="This is the content of card 9." href="https://example.com" img="https://via.placeholder.com/300" />
+    </div>
+  </div>
+</body>
+</html>
