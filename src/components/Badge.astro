@@ -1,0 +1,17 @@
+---
+interface Props {
+	text: string;
+	key: number;
+}
+
+const { text } = Astro.props;
+
+const colorMap = {
+        unity: 'bg-sky-500',
+        'c#': 'bg-indigo-500'
+      };
+    const defaultColor = 'bg-slate-400'
+    
+    const colorClass = colorMap[text.toLowerCase()] || defaultColor;
+---
+<span class={` text-white text-s font-medium me-2 px-2.5 py-0.5 rounded-full ${colorClass}`}>{text}</span>

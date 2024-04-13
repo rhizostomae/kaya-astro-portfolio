@@ -1,5 +1,45 @@
 ---
 import Card from './Card.astro';
+
+import shepherdsImg from '../assets/images/menu_background.png'
+import mangoImg from '../assets/images/mango representative image.png'
+import boosThereImg from '../assets/images/menu_background.png'
+import dreamlandImg from '../assets/images/dreamland_main.png'
+
+const cardsData = [
+  {
+    title: "Shepherds - Gameplay/UI Programmer",
+    teamSize: "Team Size: ~20",
+    timeline: "Time Constraint: 1 year",
+    href: "https://example.com",
+    img: shepherdsImg.src,
+    badges: ["C#", "Unity", "3D", "Puzzle-Adventure"]
+  },
+  {
+    title: "Mango Goes to Mewsic School - Developer",
+    teamSize: "Team Size: ~20",
+    timeline: "Time Constraint: 1 year",
+    href: "https://example.com",
+    img: mangoImg.src,
+    badges: ["C#", "Unity", "2D", "Rhythm-RPG"]
+  },
+  {
+    title: "Boo's There? - Programming Lead",
+    teamSize: "Team Size: ~20",
+    timeline: "Time Constraint: 1 year",
+    href: "https://example.com",
+    img: boosThereImg.src,
+    badges: ["C#", "Unity", "2D", "Simulator"]
+  },
+  {
+    title: "dreamland. - Gameplay Programmer",
+    teamSize: "Team Size: ~20",
+    timeline: "Time Constraint: 1 year",
+    href: "https://example.com",
+    img: dreamlandImg.src,
+    badges: ["Lua", "Roblox Studio", "3D", "Minigame"]
+  },
+];
 ---
 
 <!DOCTYPE html>
@@ -15,18 +55,19 @@ import Card from './Card.astro';
     }
   </style>
 </head>
-<body class="bg-gray-100 flex justify-center items-center h-screen">
-  <div class="w-10/12 xl:w-3/4">
+<body class="flex justify-center items-center h-screen">
+  <div class="w-10/12 xl:w-3/4 mx-auto">
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-      <Card title="Card 1" body="Omnes Regular." href="https://example.com" img="https://via.placeholder.com/300" />
-      <Card title="Card 2" body="This is the content of card 2. It has more text to demonstrate the consistent height of the cards." href="https://example.com" img="https://via.placeholder.com/300" />
-      <Card title="Card 3" body="This is the content of card 3." href="https://example.com" img="https://via.placeholder.com/300" />
-      <Card title="Card 4" body="This is the content of card 4." href="https://example.com" img="https://via.placeholder.com/300" />
-      <Card title="Card 5" body="This is the content of card 5." href="https://example.com" img="https://via.placeholder.com/300" />
-      <Card title="Card 6" body="This is the content of card 6." href="https://example.com" img="https://via.placeholder.com/300" />
-      <Card title="Card 7" body="This is the content of card 7." href="https://example.com" img="https://via.placeholder.com/300" />
-      <Card title="Card 8" body="This is the content of card 8." href="https://example.com" img="https://via.placeholder.com/300" />
-      <Card title="Card 9" body="This is the content of card 9." href="https://example.com" img="https://via.placeholder.com/300" />
+      {cardsData.map((card, index) => (
+        <Card
+          title={card.title}
+          teamSize={card.teamSize}
+          timeline={card.timeline}
+          href={card.href}
+          img={card.img}
+          badges={card.badges}
+        />
+      ))}
     </div>
   </div>
 </body>

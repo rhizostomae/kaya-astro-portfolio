@@ -1,33 +1,35 @@
 ---
+import Badge from '../components/Badge.astro'
+
 interface Props {
 	title: string;
-	body: string;
+	teamSize: string;
+	timeline: string;
 	href: string;
 	img: string;
+	badges: string[];
 }
 
-const { href, title, body, img } = Astro.props;
+const { href, title, teamSize, timeline, img, badges } = Astro.props;
+
+console.log(badges[0])
 ---
-<style>
-	.custom-font {
-		font-family: 'Omnes', sans-serif;
-	}
-	@font-face {
-	font-family: 'Omnes';
-	src: url('../../public/fonts/Omnes\ Regular.ttf') format('ttf');
-	font-weight: normal;
-	font-style: normal;
-	font-display: swap;
-	} 
-</style>
-<a class="flex flex-col bg-white shadow-sm rounded-xl hover:shadow-lg transition dark:bg-slate-900 dark:shadow-slate-700/[.7]" href={href}>
+<a class="flex flex-col bg-white shadow-sm rounded-xl hover:shadow-lg transition" href={href}>
 	<img class="w-full h-64 rounded-t-xl" src={img} alt="Image Description">
 	<div class="p-4 md:p-5">
-	  <h3 class="text-lg font-bold text-gray-800 dark:text-white">
+	  <h3 class="text-lg font-bold text-gray-800">
 		{title}
 	  </h3>
-	  <p class="custom-font mt-1 text-gray-500 dark:text-gray-400">
-		{body}
+	  <p class="mt-1 text-gray-500">
+		{teamSize}
 	  </p>
+	  <p class="mt-1 text-gray-500">
+		{timeline}
+	  </p>
+	  <div class="mt-2">
+		{badges.map((badge, index) => (
+			<Badge key={index} text={badge} />
+		))}
+	</div>
 	</div>
 </a>
