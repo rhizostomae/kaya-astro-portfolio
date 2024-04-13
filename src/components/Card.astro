@@ -12,12 +12,20 @@ interface Props {
 
 const { href, title, teamSize, timeline, img, badges } = Astro.props;
 
-console.log(badges[0])
+import gifSrc from '../assets/gifs/kpop-hitnotes.gif'
+const gifString = gifSrc.src;
+
 ---
+  
 <a class="flex flex-col bg-white shadow-sm rounded-xl hover:shadow-lg transition" href={href}>
-	<img class="w-full h-64 rounded-t-xl" src={img} alt="Image Description">
+	<img class="w-full h-64 rounded-t-xl" src={img} 
+		alt={`${title} image`}
+		data-original-src={img} 
+		onmouseover={`this.src='${gifString}'`}
+		onmouseout={`this.src='${img}'`}
+	>
 	<div class="p-4 md:p-5">
-	  <h3 class="text-lg font-bold text-gray-800">
+	  <h3 class="text-lg font-semibold text-gray-800">
 		{title}
 	  </h3>
 	  <p class="mt-1 text-gray-500">
