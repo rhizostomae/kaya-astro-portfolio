@@ -1,9 +1,9 @@
 ---
 import Card from './Card.astro';
 
-import shepherdsImg from '../assets/images/menu_background.png'
+import shepherdsImg from '../assets/images/shepherds.png'
 import mangoImg from '../assets/images/mango representative image.png'
-import boosThereImg from '../assets/images/menu_background.png'
+import boosThereImg from '../assets/images/boosthere.png'
 import dreamlandImg from '../assets/images/dreamland_main.png'
 import deseoImg from '../assets/images/deseo2.png'
 import valImg from '../assets/images/valiant.png'
@@ -11,52 +11,53 @@ import valImg from '../assets/images/valiant.png'
 const cardsData = [
   {
     title: "Shepherds - Gameplay/UI Programmer",
-    teamSize: "Team Size: ~20",
-    timeline: "Timeline: May 2023 - 2024 (1 Year)",
+    teamSize: "Team: ~20",
+    timeline: "Timeline: 1 Year (May 2023 - June 2024)",
     href: "https://example.com",
     img: shepherdsImg.src,
     badges: ["C#", "Unity", "3D", "Puzzle-Adventure"]
   },
   {
     title: "Mango Goes to Mewsic School - Developer",
-    teamSize: "Team Size: 2",
-    timeline: "Timeline: Jan 2023 - May 2023 (4 Months)",
+    teamSize: "Team: 2",
+    timeline: "Timeline: 4 Months (Jan 2023 - May 2023)",
     href: "https://example.com",
     img: mangoImg.src,
     badges: ["C#", "Unity", "2D", "Rhythm-RPG"]
   },
   {
     title: "Deseo y Diseño - Lead Programmer",
-    teamSize: "Team Size: 3",
-    timeline: "Timeline - March 2024 (1 Month)",
+    teamSize: "Team: 3",
+    timeline: "Timeline: 1 Month (March 2024)",
     href: "https://example.com",
     img: deseoImg.src,
     badges: ["C#", "Unity", "2.5D", "Narrative"]
   },
   {
     title: "dreamland. - Gameplay Programmer",
-    teamSize: "Team Size: 4",
-    timeline: "Timeline - April 2024 (48 Hours)",
-    href: "https://example.com",
+    teamSize: "Team: 4",
+    timeline: "Timeline: 48 Hours (April 2024)",
+    href: "/dreamland",
     img: dreamlandImg.src,
     badges: ["Lua", "Roblox Studio", "3D", "Minigame"]
   },
   {
     title: "Boo's There? - Programming Lead",
-    teamSize: "Team Size: ~35",
-    timeline: "Timeline: Aug 2023 - Dec 2023 (4 Months)",
+    teamSize: "Team: ~35",
+    timeline: "Timeline: 4 Months (Aug 2023 - Dec 2023)",
     href: "https://example.com",
     img: boosThereImg.src,
     badges: ["C#", "Unity", "2D", "Simulator"]
   },
   {
     title: "(val)iant - Programmer",
-    teamSize: "Team Size: ~20",
-    timeline: "Timeline - December 2022 - May 2023 (5 Months)",
+    teamSize: "Team: ~20",
+    timeline: "Timeline: 5 Months (December 2022 - May 2023)",
     href: "https://example.com",
     img: valImg.src,
     badges: ["C#", "Unity", "2D", "Narrative"]
-  },
+  }
+
 
 ];
 ---
@@ -67,11 +68,10 @@ const cardsData = [
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Card Layout</title>
-
 </head>
 <body class="flex justify-center items-center h-screen">
-  <div class="w-10/12 xl:w-3/4 mx-auto">
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+  <div class="mx-auto w-10/12 xl:w-3/4">
+    <div class="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-8">
       {cardsData.map((card, index) => (
         <Card
           title={card.title}

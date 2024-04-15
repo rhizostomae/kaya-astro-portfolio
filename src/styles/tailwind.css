@@ -10,7 +10,20 @@
   font-display: swap;
 } 
 
+@font-face {
+  font-family: 'OmnesBold';
+  src: url('/fonts/Omnes Black.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+} 
+
 body 
 {
   font-family: 'Omnes';
+}
+
+.omnesBold 
+{
+  font-family: 'OmnesBold';
 }

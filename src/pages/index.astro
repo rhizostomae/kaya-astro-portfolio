@@ -2,9 +2,9 @@
 import CardLayout from '../components/CardLayout.astro'
 import Navbar from '../components/Navbar.astro'
 import Footer from '../components/Footer.astro'
+import Header from '../components/Header.astro'
 
 ---
-
 <html lang="en">
 
   <head>
@@ -13,13 +13,14 @@ import Footer from '../components/Footer.astro'
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} >
 	<link href="/src/styles/tailwind.css" rel="stylesheet">
-    <title>kaya cook portfolio</title>
+    <title>Kaya Cook Portfolio</title>
   </head>
   <body class="bg-purple-200">
 
     <Navbar></Navbar>
+    <Header></Header>
     <CardLayout></CardLayout>
     <Footer></Footer>
-	  
+	  <a href="/dreamland">hi</a>
   </body>
 </html>

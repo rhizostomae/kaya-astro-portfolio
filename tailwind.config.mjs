@@ -6,7 +6,9 @@ export default {
 			fontFamily: {
 				'omnes': ['Omnes', 'sans-serif'],
 			  },
-			
+			colors: {
+				customred: '#ff3350', 
+			},
 		},
 	},
 	plugins: [],
