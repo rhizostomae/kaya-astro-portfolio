@@ -1,0 +1,28 @@
+---
+interface Props {
+    text: string;
+	href: string;
+}
+
+const { text, href } = Astro.props;
+
+const defaultColor = 'bg-slate-400';
+const colorMap = {
+        'roblox': 'bg-[#7f8896]',
+        'itch.io': 'bg-[#f85958]'
+    };
+const colorClass = colorMap[text.toLowerCase()] || defaultColor;
+
+---
+
+<html>
+<head>
+    <script src="https://kit.fontawesome.com/d4df086054.js" crossorigin="anonymous"></script>
+</head>
+<body>
+        <a href={href} >
+            <span class={` block text-white text-s font-medium me-2 px-2.5 py-0.5 mt-2 rounded-full whitespace-no-wrap ${colorClass}`}>{text}
+            </span>
+        </a>
+</body>
+</html>

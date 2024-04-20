@@ -1,0 +1,14 @@
+---
+interface Props {
+	title: string;
+	img: string;
+}
+
+const { title, img } = Astro.props;
+---
+
+<div class="h-80 rounded-t-xl overflow-hidden">
+    <img class="w-full h-full object-cover" src={img} 
+        alt={`${title} image`}
+    >
+</div>

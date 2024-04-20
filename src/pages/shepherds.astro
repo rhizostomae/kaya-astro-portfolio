@@ -1,0 +1,63 @@
+---
+import Navbar from '../components/Navbar.astro'
+import Footer from '../components/Footer.astro'
+import GameInfoTable from '../components/GameInfoTable.astro'
+import GamePageHeader from '../components/GamePageHeader.astro'
+import DreamlandCarousel from '../components/ImageCarousels/DreamlandCarousel.astro'
+import Badge from '../components/Badge.astro'
+
+const title = 'Shepherds'
+const tools = ['Unity', 'C#', 'Yarnspinner']
+const links = ['USC Games Expo Page']
+const hrefs = ['https://www.uscgamesexpo.com/game-2024']
+import img from '../assets/images/menu_background.png'
+---
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} >
+	<link href="/src/styles/tailwind.css" rel="stylesheet">
+    <title>Shepherds - Kaya Cook Portfolio</title>
+  </head>
+  <body class="bg-[#b4dce2]">
+
+    <Navbar></Navbar>
+
+    <div class="flex h-full">
+      <div class="mx-auto w-11/12 lg:w-3/4 xl:w-3/5 2xl:w-1/2 bg-white p-8 rounded-xl shadow-sm">
+          <GamePageHeader
+          title={title}
+          img={img.src}>
+          </GamePageHeader>
+
+          <GameInfoTable
+          status="In Development (Expected Release May 2024)"
+          timeline="1 Year (May 2023 - May 2024)"
+          role="Gameplay Programmer, UI Programmer"
+          tools={tools}
+          links={links}
+          hrefs={hrefs}
+          ></GameInfoTable>
+        
+          <div class="mx-6">
+            <h1 class="text-2xl font-bold mb-4">About Shepherds</h1>
+            <p class="text-gray-700 mb-4 text-xl">Shepherds is a local co-op 3D puzzle-adventure game, following Zoe, a shepherd, and Kin, a wolf. It is a USC Games MFA thesis project directed by <a href="https://www.haoyunzhang.com" class="font-bold">Haoyun Zhang.</a>.</p>
+            <h1 class="text-2xl font-bold mb-4">Role(s): Gameplay Programmer, UI Programmer</h1>
+            <p class="text-gray-700 text-xl">As a programmer, I've implemented:</p>
+            <ul class="text-gray-700 text-xl list-disc ml-10 mb-4">
+              <li>Camera Triggers for cinematic sequences</li>
+              <li>Main Menu / Pause Menu, with controller compatability</li>
+              <li>Dialogue / Asset Localization into Chinese</li>
+              <li>Prototyped Zoe's Character Controller</li>
+              <li>Character selection</li>
+            </ul>
+          </div>
+      </div>
+    </div>
+    <Footer></Footer>
+	  
+  </body>
+</html>
