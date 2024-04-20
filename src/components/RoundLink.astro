@@ -1,17 +1,43 @@
 ---
 interface Props {
-    text: string;
-	href: string;
+	linkKey: string;
 }
 
-const { text, href } = Astro.props;
+const { linkKey } = Astro.props;
 
 const defaultColor = 'bg-slate-400';
 const colorMap = {
-        'roblox': 'bg-[#7f8896]',
-        'itch.io': 'bg-[#f85958]'
+        'dreamland-roblox': 'bg-[#7f8896]',
+        'dreamland-itch': 'bg-[#f85958]',
+        'mango-itch': '',
+        'mango-steam': '',
+        'mango-competition': '',
     };
-const colorClass = colorMap[text.toLowerCase()] || defaultColor;
+
+const linkMap = 
+{
+    'dreamland-itch': 'https://rhizostomae.itch.io/dreamland',
+    'dreamland-roblox': 'https://www.roblox.com/games/17027902554/dreamland',
+    'mango-itch': '',
+    'mango-steam': '',
+    'mango-competition': '',
+
+
+};
+
+const textMap =
+{
+    'dreamland-itch': 'Itch.io',
+    'dreamland-roblox': 'Roblox',
+    'mango-itch': 'Itch.io',
+    'mango-steam': 'Steam (Coming Soon)',
+    'mango-competition': 'Competition Article',
+};
+
+
+const colorClass = colorMap[linkKey.toLowerCase()] || defaultColor;
+const link = linkMap[linkKey.toLowerCase()] || 'https://example.com';
+const text = textMap[linkKey.toLowerCase()] || linkKey;
 
 ---
 
@@ -20,7 +46,7 @@ const colorClass = colorMap[text.toLowerCase()] || defaultColor;
     <script src="https://kit.fontawesome.com/d4df086054.js" crossorigin="anonymous"></script>
 </head>
 <body>
-        <a href={href} >
+        <a href={link} target="_blank">
             <span class={` block text-white text-s font-medium me-2 px-2.5 py-0.5 mt-2 rounded-full whitespace-no-wrap ${colorClass}`}>{text}
             </span>
         </a>
