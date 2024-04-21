@@ -4,7 +4,7 @@
 
 @font-face {
   font-family: 'Omnes';
-  src: url('/fonts/Omnes Regular.ttf') format('truetype');
+  src: url('/kaya-astro-portfolio/fonts/Omnes Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -12,7 +12,7 @@
 
 @font-face {
   font-family: 'OmnesBold';
-  src: url('/fonts/Omnes Black.ttf') format('truetype');
+  src: url('/kaya-astro-portfolio//fonts/Omnes Black.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
