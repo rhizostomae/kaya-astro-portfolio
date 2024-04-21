@@ -12,7 +12,7 @@
 
 @font-face {
   font-family: 'OmnesBold';
-  src: url('/kaya-astro-portfolio//fonts/Omnes Black.ttf') format('truetype');
+  src: url('/kaya-astro-portfolio/fonts/Omnes Black.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -20,7 +20,8 @@
 
 body 
 {
-  font-family: 'Omnes', sans-serif;
+  font-family: 'Sen', sans-serif;
+  /* font-family: 'Omnes', sans-serif; */
 }
 
 .omnesBold 
