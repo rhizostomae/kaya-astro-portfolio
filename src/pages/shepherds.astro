@@ -5,6 +5,8 @@ import GameInfoTable from '../components/GameInfoTable.astro'
 import GamePageHeader from '../components/GamePageHeader.astro'
 import DreamlandCarousel from '../components/ImageCarousels/DreamlandCarousel.astro'
 import Badge from '../components/Badge.astro'
+import { ViewTransitions } from 'astro:transitions';
+
 
 const title = 'Shepherds'
 const tools = ['Unity', 'C#', 'Yarnspinner']
@@ -20,7 +22,9 @@ import img from '../assets/images/menu_background.png'
     <meta name="generator" content={Astro.generator} >
 	<link href="/src/styles/tailwind.css" rel="stylesheet">
     <title>Shepherds - Kaya Cook Portfolio</title>
-    <link href="https://fonts.googleapis.com/css?family=Varela Round" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Varela Round" rel="stylesheet">  
+    <ViewTransitions></ViewTransitions>
+
   <style>
     body
     {
