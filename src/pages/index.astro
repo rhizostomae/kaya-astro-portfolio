@@ -3,7 +3,6 @@ import CardLayout from '../components/CardLayout.astro'
 import Navbar from '../components/Navbar.astro'
 import Footer from '../components/Footer.astro'
 import Header from '../components/Header.astro'
-import { ViewTransitions } from 'astro:transitions';
 
 
 ---
@@ -16,7 +15,6 @@ import { ViewTransitions } from 'astro:transitions';
     <meta name="generator" content={Astro.generator} >
 	<link href="/src/styles/tailwind.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Varela Round" rel="stylesheet">
-  <ViewTransitions></ViewTransitions>
 
   <style>
     body
@@ -27,7 +25,7 @@ import { ViewTransitions } from 'astro:transitions';
     <title>Kaya Cook Portfolio</title>
     <script src="https://kit.fontawesome.com/d4df086054.js" crossorigin="anonymous"></script>
   </head>
-  <body class="bg-purple-200 "> <!--purple-200-->
+  <body class="bg-violet-200 "> <!--purple-200-->
     <Navbar></Navbar>
     <Header></Header>
     <CardLayout></CardLayout>

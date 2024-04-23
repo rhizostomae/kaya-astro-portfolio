@@ -16,7 +16,15 @@ import gifSrc from '../assets/gifs/kpop-hitnotes.gif'
 const gifString = gifSrc.src;
 ---
 
-<a class="flex flex-col bg-white shadow-sm rounded-xl hover:shadow-lg transition " href={href}>
+<html>
+	<head>
+		<link
+    	rel="stylesheet"
+   		 href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  		/>
+	</head>
+<body>
+<a class="flex flex-col bg-white shadow-sm rounded-xl hover:shadow-lg transition animate__animated animate__fadeIn" href={href}>
 	<div class="h-64 rounded-t-xl overflow-hidden">
         <img class="w-full h-full object-cover" src={img} 
             alt={`${title} image`}
@@ -44,3 +52,5 @@ const gifString = gifSrc.src;
 	</div>
 	</div>
 </a>
+</body>
+</html>
