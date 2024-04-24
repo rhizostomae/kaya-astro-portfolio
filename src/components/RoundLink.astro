@@ -6,9 +6,26 @@ interface Props {
 const { linkKey } = Astro.props;
 
 const defaultColor = 'bg-slate-400';
+const defaultHover = 'bg-slate-600';
 const colorMap = {
         'dreamland-roblox': 'bg-[#7f8896]',
         'dreamland-itch': 'bg-[#f85958]',
+        'mango-itch': 'bg-[#f85958]',
+        'mango-steam': 'bg-[#0f2d5f]',
+        'mango-competition': '',
+        'shepherds-uscgames': '',
+        'boos-itch': 'bg-[#f85958]',
+        'boos-steam': 'bg-[#0f2d5f]',
+        'boos-oa': '',
+        'deseo-itch': 'bg-[#f85958]',
+        'val-itch': 'bg-[#f85958]',
+        'val-steam': 'bg-[#0f2d5f]',
+        'val-website': '',
+};
+
+const hoverMap = {
+        'dreamland-roblox': 'bg-[#7f8896]',
+        'dreamland-itch': 'bg-slate-900',
         'mango-itch': 'bg-[#f85958]',
         'mango-steam': 'bg-[#0f2d5f]',
         'mango-competition': '',
@@ -56,10 +73,29 @@ const textMap =
     'val-website': 'Game Site',
 };
 
+const shortTextMap =
+{
+    'dreamland-itch': 'Itch.io',
+    'dreamland-roblox': 'Roblox',
+    'mango-itch': 'Itch.io',
+    'mango-steam': 'Steam',
+    'mango-competition': 'Competition',
+    'shepherds-uscgames': 'USC Games',
+    'boos-itch': 'Itch.io',
+    'boos-steam': 'Steam',
+    'boos-oa': 'OA Website',
+    'deseo-itch': 'Itch.io',
+    'val-itch': 'Itch.io',
+    'val-steam': 'Steam',
+    'val-website': 'Website',
+};
+
 
 const colorClass = colorMap[linkKey.toLowerCase()] || defaultColor;
 const link = linkMap[linkKey.toLowerCase()] || 'https://example.com';
 const text = textMap[linkKey.toLowerCase()] || linkKey;
+const shortText = shortTextMap[linkKey.toLowerCase()] || linkKey;
+const hoverClass = hoverMap[linkKey.toLowerCase()] || defaultHover;
 
 ---
 
@@ -68,8 +104,10 @@ const text = textMap[linkKey.toLowerCase()] || linkKey;
     <script src="https://kit.fontawesome.com/d4df086054.js" crossorigin="anonymous"></script>
 </head>
 <body>
-        <a href={link} target="_blank">
-            <span class={` block text-white text-s font-medium me-2 px-2.5 py-0.5 mt-2 rounded-full whitespace-no-wrap ${colorClass}`}>{text}
+        <a href={link} target="_blank" class=`hover:${hoverClass}`>
+            <span class={` hidden sm:block text-white text-sm sm:text-lg font-medium me-2 px-2.5 py-0.5 mt-2 rounded-full whitespace-no-wrap ${colorClass}`}>{text}
+            </span>
+            <span class={` block sm:hidden text-white text-sm sm:text-lg font-medium me-2 px-2.5 py-0.5 mt-2 rounded-full whitespace-no-wrap ${colorClass}`}>{shortText}
             </span>
         </a>
 </body>
