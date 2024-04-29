@@ -1,10 +1,9 @@
 ---
-import CardLayout from '../components/CardLayout.astro'
 import Navbar from '../components/Navbar.astro'
 import Footer from '../components/Footer.astro'
-import Header from '../components/Header.astro'
 import Image from 'astro/components/Image.astro'
 import KayaAbout from '../assets/images/kaya-about-rounded.png'
+import KayaAboutSmall from '../assets/images/kaya-about-small.png'
 
 ---
 <html lang="en">
@@ -26,17 +25,49 @@ import KayaAbout from '../assets/images/kaya-about-rounded.png'
   </style>
     <title>About - Kaya Cook Portfolio</title>
   </head>
-  <body class="bg-violet-200 "> <!--purple-200-->
-    <Navbar></Navbar>
-    <div class="flex h-full">
-        <div class="mx-auto w-11/12 lg:w-3/4 xl:w-3/5 2xl:w-1/2 bg-white p-8 rounded-xl shadow-sm">
-            <div class="mx-6">
-              <h1 class="text-2xl font-bold mb-4">About</h1>
-              <p class="text-gray-700 mb-4 text-xl">Hi, I'm Kaya Cook! I'm a junior studying Computer Science Games at USC, primarily interested in gameplay programming and software engineering. I'm currently a Gameplay/UI programmer for Shepherds, a USC Games MFA thesis game. I like to make games with simple, engaging mechanics, that are cute and polished! Personally, I love to play games like The Sims 4, Slime Rancher and Cookie Run: Kingdom, as well as games with my friends on Roblox!</p>
-                <Image src={KayaAbout} class="h-96 w-auto" alt="Kaya About"></Image>
+  <body class="bg-violet-200"> <!--purple-200-->
+      <Navbar></Navbar>
+      <div class="flex h-full">
+          <div class="mx-auto w-11/12 lg:w-3/4 xl:w-3/5 2xl:w-1/2 bg-white p-8 rounded-xl shadow-sm">
+              <h1 class="text-lg sm:text-2xl font-bold mb-4">About</h1>
+                <div class=" md:flex md:flex-row">
+                  <div class="flex-col">
+                  <p class="text-gray-700 mb-4 text-base sm:text-xl lg:mr-4">
+                    Hi, I'm Kaya! I'm a junior studying <b class="text-rose-500">Computer Science Games</b> at USC, primarily interested in gameplay programming and software engineering. 
+                  </p>
+
+                  <p class=" mb-2 text-base font-bold sm:text-xl lg:mr-4">
+                    Active + Upcoming Roles!
+                  </p>
+
+                  <ul class="list-disc text-gray-700 mb-4 ml-6 text-base sm:text-xl lg:mr-4">
+                    <li>Gameplay/UI programmer for Shepherds (May 2023-May 2024)
+                    </li>
+                    <li>Software Engineering Intern @ Microsoft (Summer 2024)
+                    </li>
+                  </ul>
+
+                  <p class=" mb-2 text-base font-bold sm:text-xl lg:mr-4">
+                    Currently Playing!
+                  </p>
+                
+                  <ul class="list-disc text-gray-700 mb-2 sm:mb-4 ml-6 text-base sm:text-xl lg:mr-4">
+                    <li>Cookie Run: Kingdom</li>
+                    <li>Skengines Racing (Roblox)</li>
+                    <li>Honk (Roblox)</li>
+                  </ul>
+                </div>
+                  <div class="hidden md:flex justify-center md:flex-none">
+                    <Image src={KayaAbout} alt="Kaya About" class="hidden md:block h-96 w-auto ml-0 sm:ml-4 mt-2 sm:mt-0">
+                  </div>
+                  <div class="flex justify-center md:flex-none md:hidden">
+                    <Image src={KayaAboutSmall} alt="Kaya About" class="h-auto w-11/12 sm:w-2/3 ml-0 sm:ml-4 mt-0 ">
+                  </div>
             </div>
+          </div>
         </div>
-      </div>
-    <Footer></Footer>
+      <Footer></Footer>
   </body>
+
+
 </html>
