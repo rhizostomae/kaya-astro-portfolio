@@ -4,7 +4,7 @@ import Footer from '../components/Footer.astro'
 import GameInfoTable from '../components/GameInfoTable.astro'
 import GamePageHeader from '../components/GamePageHeader.astro'
 import MangoCarousel from '../components/ImageCarousels/MangoCarousel.astro'
-import Badge from '../components/Badge.astro'
+import Pagination from '../components/Pagination.astro'
 
 const title = 'Mango Goes to Mewsic School'
 const tools = ['Unity', 'C#', 'Yarnspinner']
@@ -28,12 +28,12 @@ import img from '../assets/images/mango representative image.png'
   </style>
     <title>Mango - Kaya Cook Portfolio</title>
   </head>
-  <body class="bg-[#ff99a2]">
+  <body class="bg-[#efafa8]">
 
     <Navbar></Navbar>
 
     <div class="flex h-full">
-      <div class="mx-auto w-11/12 lg:w-3/4 xl:w-3/5 2xl:w-1/2 bg-white p-8 rounded-xl shadow-sm">
+      <div class="mx-auto w-11/12 lg:w-3/4 xl:w-3/5 2xl:w-1/2 bg-white p-5 sm:p-8 rounded-xl shadow-sm">
           <GamePageHeader
           title={title}
           img={img.src}>
@@ -81,6 +81,10 @@ import img from '../assets/images/mango representative image.png'
 
       </div>
     </div>
+    <Pagination
+          next='deseo'
+          previous='shepherds'
+    ></Pagination>
     <Footer></Footer>
 	  
   </body>

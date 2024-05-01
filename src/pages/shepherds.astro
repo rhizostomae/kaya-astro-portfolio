@@ -3,15 +3,14 @@ import Navbar from '../components/Navbar.astro'
 import Footer from '../components/Footer.astro'
 import GameInfoTable from '../components/GameInfoTable.astro'
 import GamePageHeader from '../components/GamePageHeader.astro'
-import DreamlandCarousel from '../components/ImageCarousels/DreamlandCarousel.astro'
-import Badge from '../components/Badge.astro'
-import { ViewTransitions } from 'astro:transitions';
-
+import Pagination from '../components/Pagination.astro'
 
 const title = 'Shepherds'
 const tools = ['Unity', 'C#', 'Yarnspinner']
 const links = ['shepherds-uscgames']
-import img from '../assets/images/menu_background.png'
+import img from '../assets/images/shepherds-header3.png'
+
+import '../styles/animasta.css';
 ---
 <html lang="en">
 
@@ -23,8 +22,6 @@ import img from '../assets/images/menu_background.png'
 	<link href="/src/styles/tailwind.css" rel="stylesheet">
     <title>Shepherds - Kaya Cook Portfolio</title>
     <link href="https://fonts.googleapis.com/css?family=Varela Round" rel="stylesheet">  
-    <ViewTransitions></ViewTransitions>
-
   <style>
     body
     {
@@ -32,12 +29,12 @@ import img from '../assets/images/menu_background.png'
     }
   </style>
   </head>
-  <body class="bg-[#b4dce2]">
+  <body class="bg-[#bcbbe7]">
 
     <Navbar></Navbar>
 
     <div class="flex h-full">
-      <div class="mx-auto w-11/12 lg:w-3/4 xl:w-3/5 2xl:w-1/2 bg-white p-8 rounded-xl shadow-sm">
+      <div class="mx-auto w-11/12 lg:w-3/4 xl:w-3/5 2xl:w-1/2 bg-white p-5 sm:p-8 rounded-xl shadow-sm">
           <GamePageHeader
           title={title}
           img={img.src}>
@@ -58,9 +55,11 @@ import img from '../assets/images/menu_background.png'
             <p class="text-gray-700 text-sm sm:text-xl">As a programmer, I've implemented:</p>
             <ul class="text-gray-700 text-sm sm:text-xl list-disc ml-10 mb-4">
               <li>Camera Triggers for cinematic sequences</li>
+              <li>Dolly Camera follow, keeping both characters in frame</li>
               <li>Main Menu / Pause Menu, with controller compatability</li>
               <li>Dialogue / Asset Localization into Chinese</li>
-              <li>Prototyped Zoe's Character Controller</li>
+              <li>Prototype of Zoe's Character Controller</li>
+              <li>Post-Processing sliders</li>
             </ul>
           </div>
           <h1 class="text-md sm:text-2xl mx-0 sm:mx-6 font-bold mb-4">Trailer</h1>
@@ -72,6 +71,10 @@ import img from '../assets/images/menu_background.png'
           ></iframe>
       </div>
     </div>
+    <Pagination
+          next='mango'
+          previous='valiant'
+    ></Pagination>
     <Footer></Footer>
 	  
   </body>

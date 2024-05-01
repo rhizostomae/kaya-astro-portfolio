@@ -4,9 +4,9 @@ import Footer from '../components/Footer.astro'
 import GameInfoTable from '../components/GameInfoTable.astro'
 import GamePageHeader from '../components/GamePageHeader.astro'
 import DreamlandCarousel from '../components/ImageCarousels/DreamlandCarousel.astro'
-import Badge from '../components/Badge.astro'
+import Pagination from '../components/Pagination.astro'
 
-const title = 'dreamland'
+const title = 'dreamland.'
 const tools = ['Roblox Studio', 'Lua']
 const links = ['dreamland-itch', 'dreamland-roblox']
 import img from '../assets/images/dreamland_main.png'
@@ -33,9 +33,9 @@ import img from '../assets/images/dreamland_main.png'
     <Navbar></Navbar>
 
     <div class="flex h-full">
-      <div class="mx-auto w-11/12 lg:w-3/4 xl:w-3/5 2xl:w-1/2 bg-white p-8 rounded-xl shadow-sm">
+      <div class="mx-auto w-11/12 lg:w-3/4 xl:w-3/5 2xl:w-1/2 bg-white p-5 sm:p-8 rounded-xl shadow-sm">
           <GamePageHeader
-          title='dreamland.'
+          title={title}
           img={img.src}>
           </GamePageHeader>
 
@@ -64,7 +64,11 @@ import img from '../assets/images/dreamland_main.png'
           <DreamlandCarousel></DreamlandCarousel>
       </div>
     </div>
+    <Pagination
+          next='boos'
+          previous='deseo'
+    ></Pagination>
     <Footer></Footer>
-	  
+	 
   </body>
 </html>

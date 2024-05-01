@@ -1,0 +1,49 @@
+---
+interface Props {
+	next: string;
+    previous: string;
+}
+
+const { next, previous } = Astro.props;
+
+const linkMap = 
+{
+    'dreamland': '/kaya-astro-portfolio/dreamland',
+    'boos': '/kaya-astro-portfolio/boos',
+    'deseo': '/kaya-astro-portfolio/deseo',
+    'mango': '/kaya-astro-portfolio/mango',
+    'shepherds': '/kaya-astro-portfolio/shepherds',
+    'valiant': '/kaya-astro-portfolio/valiant',
+};
+
+const titleMap = 
+{
+    'dreamland': 'dreamland.',
+    'boos': "Boo's There?",
+    'deseo': 'Deseo y Diseño',
+    'mango': 'Mango Goes to Mewsic School',
+    'shepherds': 'Shepherds',
+    'valiant': '(val)iant',
+};
+
+const defaultLink = 'https://example.com'
+const prevLink = linkMap[previous.toLowerCase()] || defaultLink;
+const nextLink = linkMap[next.toLowerCase()] || defaultLink;
+const prevTitle = titleMap[previous.toLowerCase()] || 'Previous';
+const nextTitle = titleMap[next.toLowerCase()] || 'Next';
+
+---
+<div class="mx-auto w-11/12 lg:w-3/4 xl:w-3/5 2xl:w-1/2 mt-8 px-5 sm:px-8 flex justify-between items-center text-lg sm:text-2xl text-[#21062f]">
+    <div class="flex items-center hover:text-rose-600">
+        <svg class="w-4 h-4 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+        </svg>
+        <a href={prevLink} class="ml-2 font-bold hover:underline">{prevTitle}</a>
+    </div>
+    <div class="flex items-center hover:text-rose-600">
+        <a href={nextLink} class="mr-2 font-bold hover:underline">{nextTitle}</a>
+        <svg class="w-4 h-4 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+        </svg>
+    </div>
+</div>

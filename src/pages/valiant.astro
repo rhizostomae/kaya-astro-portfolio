@@ -4,6 +4,7 @@ import Footer from '../components/Footer.astro'
 import GameInfoTable from '../components/GameInfoTable.astro'
 import GamePageHeader from '../components/GamePageHeader.astro'
 import ValiantCarousel from '../components/ImageCarousels/ValiantCarousel.astro'
+import Pagination from '../components/Pagination.astro'
 
 const title = '(val)iant'
 const tools = ['Unity', 'C#', 'Yarnspinner']
@@ -33,7 +34,7 @@ import img from '../assets/images/valiant.png'
     <Navbar></Navbar>
 
     <div class="flex h-full">
-      <div class="mx-auto w-11/12 lg:w-3/4 xl:w-3/5 2xl:w-1/2 bg-white p-8 rounded-xl shadow-sm">
+      <div class="mx-auto w-11/12 lg:w-3/4 xl:w-3/5 2xl:w-1/2 bg-white p-5 sm:p-8 rounded-xl shadow-sm">
           <GamePageHeader
           title={title}
           img={img.src}>
@@ -52,18 +53,14 @@ import img from '../assets/images/valiant.png'
             <p class="text-gray-700 mb-4 text-sm sm:text-xl">
               (val)iant is a browser-based narrative game, directed by USC Games MFA student <b>Kaitlin 'KB' Bonfiglio</b>. It follows Val, a nonbinary college student, and focuses on their relationship with sex and their body, as well as more general issues related to vaginal health.</p>
             <h1 class="text-md sm:text-2xl font-bold mb-4">Role(s): Programmer</h1>
-            <p class="text-gray-700 text-sm sm:text-xl">I located and addressed bugs in gameplay to ensure a smooth player experience, such as issues with the pause menu or differences between sprite appearance in Windows/Mac versus WebGL builds. 
-              I also redesigned game systems, such as dynamic buttons for a scene with multiple dialogue options, and credits navigation.
-              Finally, I created a Javascript plugin for opening links from the WebGL build, facilitating user access to vaginal health resources.</p>
-            <!-- <ul class="text-gray-700 text-xl list-disc ml-10 mb-6">
-              <li>Beat-synced obstacles, decor, and UI</li>
-              <li>Tile-based movement and collision detection using raycasting</li>
-              <li>Rhythm game sequence/progression</li>
-              <li>Dialogue implementation using Yarnspinner</li>
-              <li>Player health and damage</li>
-              <li>Scene transitions</li>
-              <li>Tutorial functionality</li>
-            </ul> -->
+            <p class="text-gray-700 text-sm sm:text-xl mb-2">I located and addressed bugs in gameplay to ensure a smooth player experience. Some things I worked on include:
+            <ul class="text-gray-700 text-sm sm:text-xl list-disc ml-10 mb-6">
+              <li>Differences in sprite appearance between PC and WebGL</li>
+              <li>Dynamic buttons for a scene with multiple dialogue options</li>
+              <li>Credits navigation</li>
+              <li>Javascript plugin for opening links from WebGL</li>
+              <li>Pause Menu bugs</li>
+            </ul>
           </div>
 
           <ValiantCarousel></ValiantCarousel>
@@ -81,6 +78,10 @@ import img from '../assets/images/valiant.png'
 
       </div>
     </div>
+    <Pagination
+          next='shepherds'
+          previous='boos'
+    ></Pagination>
     <Footer></Footer>
 	  
   </body>

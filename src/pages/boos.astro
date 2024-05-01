@@ -4,6 +4,7 @@ import Footer from '../components/Footer.astro'
 import GameInfoTable from '../components/GameInfoTable.astro'
 import GamePageHeader from '../components/GamePageHeader.astro'
 import BoosCarousel from '../components/ImageCarousels/BoosCarousel.astro'
+import Pagination from '../components/Pagination.astro'
 
 const title = "Boo's There?"
 const tools = ['Unity', 'C#', 'Yarnspinner']
@@ -32,7 +33,7 @@ import img from '../assets/images/boostitle4.png'
     <Navbar></Navbar>
 
     <div class="flex h-full">
-      <div class="mx-auto w-11/12 lg:w-3/4 xl:w-3/5 2xl:w-1/2 bg-white p-8 rounded-xl shadow-sm">
+      <div class="mx-auto w-11/12 lg:w-3/4 xl:w-3/5 2xl:w-1/2 bg-white p-5 sm:p-8 rounded-xl shadow-sm">
           <GamePageHeader
           title={title}
           img={img.src}>
@@ -79,6 +80,10 @@ import img from '../assets/images/boostitle4.png'
 
       </div>
     </div>
+    <Pagination
+          next='valiant'
+          previous='dreamland'
+    ></Pagination>
     <Footer></Footer>
 	  
   </body>
