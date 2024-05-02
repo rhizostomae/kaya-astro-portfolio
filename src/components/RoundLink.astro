@@ -6,21 +6,21 @@ interface Props {
 const { linkKey } = Astro.props;
 
 const defaultColor = 'bg-teal-600';
-const defaultHover = 'bg-teal-600';
+const defaultHover = 'bg-rose-600';
 const colorMap = {
         'dreamland-roblox': 'bg-slate-600',
         'dreamland-itch': 'bg-[#f85958]',
         'mango-itch': 'bg-[#f85958]',
         'mango-steam': 'bg-[#0f2d5f]',
-        'mango-competition': '',
-        'shepherds-uscgames': '',
+        'mango-competition': 'bg-[#c4509d]',
+        'shepherds-uscgames': 'bg-[#82b248]',
         'boos-itch': 'bg-[#f85958]',
         'boos-steam': 'bg-[#0f2d5f]',
-        'boos-oa': '',
+        'boos-oa': 'bg-[#f68930]',
         'deseo-itch': 'bg-[#f85958]',
         'val-itch': 'bg-[#f85958]',
         'val-steam': 'bg-[#0f2d5f]',
-        'val-website': '',
+        'val-website': 'bg-[#ff5bd5]',
 };
 
 const hoverMap = {
@@ -104,10 +104,10 @@ const hoverClass = hoverMap[linkKey.toLowerCase()] || defaultHover;
     <script src="https://kit.fontawesome.com/d4df086054.js" crossorigin="anonymous"></script>
 </head>
 <body>
-        <a href={link} target="_blank" class=`hover:${hoverClass}`>
-            <span class={` hidden sm:block text-white text-sm sm:text-lg font-medium me-2 px-2.5 py-0.5 mt-2 rounded-full whitespace-no-wrap ${colorClass}`}>{text}
+        <a href={link} target="_blank">
+            <span class={`hidden sm:block text-white text-sm sm:text-lg font-medium me-2 px-2.5 py-0.5 mt-2 rounded-full whitespace-no-wrap ${colorClass} hover:brightness-95`}>{text}
             </span>
-            <span class={` block sm:hidden text-white text-sm sm:text-lg font-medium me-2 px-2.5 py-0.5 mt-2 rounded-full whitespace-no-wrap ${colorClass}`}>{shortText}
+            <span class={`block sm:hidden text-white text-sm sm:text-lg font-medium me-2 px-2.5 py-0.5 mt-2 rounded-full whitespace-no-wrap ${colorClass} hover:brightness-95`}>{shortText}
             </span>
         </a>
 </body>

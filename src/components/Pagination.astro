@@ -33,17 +33,43 @@ const prevTitle = titleMap[previous.toLowerCase()] || 'Previous';
 const nextTitle = titleMap[next.toLowerCase()] || 'Next';
 
 ---
+<head>
+    <style>
+        /* CSS */
+        .link-with-underline {
+        position: relative;
+        text-decoration: none; /* Remove default underline */
+        }
+
+        .link-with-underline::after {
+        content: '';
+        position: absolute;
+        bottom: -1px; /* Adjust the distance of the underline from the text */
+        left: 0;
+        width: 100%;
+        height: 2px; /* Adjust the thickness of the underline */
+        background-color: transparent;
+        transition: background-color 0.2s ease; /* Add transition for smooth animation */
+        }
+
+        .link-with-underline:hover::after {
+        background-color: #e11d48; /* Change the color of the underline on hover */
+        }
+    </style>
+</head>
+<body>
 <div class="mx-auto w-11/12 lg:w-3/4 xl:w-3/5 2xl:w-1/2 mt-8 px-5 sm:px-8 flex justify-between items-center text-lg sm:text-2xl text-[#21062f]">
     <div class="flex items-center hover:text-rose-600">
         <svg class="w-4 h-4 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
         </svg>
-        <a href={prevLink} class="ml-2 font-bold hover:underline">{prevTitle}</a>
+        <a href={prevLink} class="link-with-underline ml-2 font-bold">{prevTitle}</a>
     </div>
     <div class="flex items-center hover:text-rose-600">
-        <a href={nextLink} class="mr-2 font-bold hover:underline">{nextTitle}</a>
+        <a href={nextLink} class="link-with-underline mr-2 font-bold">{nextTitle}</a>
         <svg class="w-4 h-4 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
         </svg>
     </div>
 </div>
+</body>
