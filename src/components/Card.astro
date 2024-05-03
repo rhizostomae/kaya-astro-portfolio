@@ -1,5 +1,6 @@
 ---
 import Badge from '../components/Badge.astro'
+import Image from 'astro/components/Image.astro'
 import '../styles/animasta.css';
 
 interface Props {
@@ -8,13 +9,12 @@ interface Props {
 	timeline: string;
 	href: string;
 	img: string;
+	altImg: string;
 	badges: string[];
 }
 
-const { href, title, teamSize, timeline, img, badges } = Astro.props;
+const { href, title, teamSize, timeline, img, altImg, badges } = Astro.props;
 
-import gifSrc from '../assets/gifs/kpop-hitnotes.gif'
-const gifString = gifSrc.src;
 ---
 
 <html>
@@ -25,9 +25,12 @@ const gifString = gifSrc.src;
   		/>
 	</head>
 <body>
-<a class="flip-in-hor-bottom text-sm sm:text-lg flex mx-auto flex-col min-w-84 max-w-[28rem] bg-white shadow-sm rounded-xl hover:shadow-lg" href={href}>
-	<div class="h-48 sm:h-64 rounded-t-xl overflow-hidden">
-        <img class="w-full h-full object-cover" src={img} 
+<a class="group flip-in-hor-bottom text-sm sm:text-lg flex mx-auto flex-col min-w-84 max-w-[28rem] bg-white shadow-sm rounded-xl hover:shadow-xl" href={href}>
+	<div class="h-48 sm:h-64 rounded-t-xl overflow-hidden">   
+		<img class="hidden group-hover:block w-full h-full object-cover" src={altImg} 
+            alt={`${title} altImg`}
+        >
+		<img class="group-hover:hidden w-full h-full object-cover" src={img} 
             alt={`${title} image`}
         >
     </div>

@@ -6,7 +6,15 @@ import mangoImg from '../assets/images/mango representative image.png'
 import boosThereImg from '../assets/images/boostitle4.png'
 import dreamlandImg from '../assets/images/dreamland_main.png'
 import deseoImg from '../assets/images/deseo2.png'
-import valImg from '../assets/images/valiant.png'
+import valImg from '../assets/images/val-close1.png'
+
+import shepherdsAltImg from '../assets/gifs/shepherds.gif'
+import mangoAltImg from '../assets/gifs/kpop-hitnotes.gif'
+import boosThereAltImg from '../assets/gifs/boos.gif'
+import dreamlandAltImg from '../assets/gifs/dreamland-gif1-short.gif'
+import deseoAltImg from '../assets/gifs/deseo.gif'
+import valAltImg from '../assets/gifs/val.gif'
+
 
 const cardsData = [
   {
@@ -15,6 +23,7 @@ const cardsData = [
     timeline: "Timeline: 1 Year (May 2023 - June 2024)",
     href: "/kaya-astro-portfolio//shepherds",
     img: shepherdsImg.src,
+    altImg: shepherdsAltImg.src,
     badges: ["C#", "Unity", "3D", "Puzzle-Adventure"]
   },
   {
@@ -23,6 +32,7 @@ const cardsData = [
     timeline: "Timeline: 4 Months (Jan 2023 - May 2023)",
     href: "/kaya-astro-portfolio//mango",
     img: mangoImg.src,
+    altImg: mangoAltImg.src,
     badges: ["C#", "Unity", "2D", "Rhythm-RPG"]
   },
   {
@@ -31,6 +41,7 @@ const cardsData = [
     timeline: "Timeline: 1 Month (March 2024)",
     href: "/kaya-astro-portfolio//deseo",
     img: deseoImg.src,
+    altImg: deseoAltImg.src,
     badges: ["C#", "Unity", "2.5D", "Narrative"]
   },
   {
@@ -39,6 +50,7 @@ const cardsData = [
     timeline: "Timeline: 48 Hours (April 2024)",
     href: "/kaya-astro-portfolio/dreamland",
     img: dreamlandImg.src,
+    altImg: dreamlandAltImg.src,
     badges: ["Lua", "Roblox Studio", "3D", "Multiplayer"]
   },
   {
@@ -47,6 +59,7 @@ const cardsData = [
     timeline: "Timeline: 4 Months (Aug 2023 - Dec 2023)",
     href: "/kaya-astro-portfolio//boos",
     img: boosThereImg.src,
+    altImg: boosThereAltImg.src,
     badges: ["C#", "Unity", "2D", "Simulator"]
   },
   {
@@ -55,6 +68,7 @@ const cardsData = [
     timeline: "Timeline: 5 Months (December 2022 - May 2023)",
     href: "/kaya-astro-portfolio//valiant",
     img: valImg.src,
+    altImg: valAltImg.src,
     badges: ["C#", "Unity", "2D", "Narrative"]
   }
 
@@ -79,6 +93,7 @@ const cardsData = [
           timeline={card.timeline}
           href={card.href}
           img={card.img}
+          altImg={card.altImg}
           badges={card.badges}
         />
       ))}
